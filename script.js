@@ -105,18 +105,6 @@ const studentTeam =
     );
 
 
-const studentEmail =
-    document.getElementById(
-        "studentEmail"
-    );
-
-
-const studentPhone =
-    document.getElementById(
-        "studentPhone"
-    );
-
-
 const studentBirthday =
     document.getElementById(
         "studentBirthday"
@@ -451,22 +439,6 @@ function displayStudent(
 
     studentTeam.textContent =
         data.Team || "N/A";
-
-
-    // --------------------------------------
-    // Email
-    // --------------------------------------
-
-    studentEmail.textContent =
-        data.Gmail || "N/A";
-
-
-    // --------------------------------------
-    // Phone
-    // --------------------------------------
-
-    studentPhone.textContent =
-        data.Phone_NO || "N/A";
 
 
     // --------------------------------------
