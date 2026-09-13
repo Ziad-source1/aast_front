@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>⚓ AAST STUDENT UNION ⚓</title>
+
+    <meta name="description" content="AAST Student Union Member Portal">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <!-- =====================================
+         BACKGROUND
+    ====================================== -->
+
+    <div class="background">
+
+        <div class="background-circle circle-one"></div>
+
+        <div class="background-circle circle-two"></div>
+
+        <div class="background-grid"></div>
+
+    </div>
+
+
+    <!-- =====================================
+         NAVBAR
+    ====================================== -->
+
+    <nav class="navbar">
+
+        <div class="navbar-container">
+
+            <div class="brand">
+
+                <div class="brand-logo">
+                    ⚓
+                </div>
+
+                <div class="brand-text">
+
+                    <div class="brand-main">
+                        AAST
+                    </div>
+
+                    <div class="brand-sub">
+                        STUDENT UNION
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="portal-status">
+
+                <span class="status-dot"></span>
+
+                <span>
+                    Student Union Portal
+                </span>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================
+         MAIN
+    ====================================== -->
+
+    <main class="main-container">
+
+
+        <!-- =================================
+             HERO
+        ================================== -->
+
+        <section class="hero">
+
+            <div class="hero-badge">
+
+                <span>⚓</span>
+
+                <span>
+                    AAST STUDENT UNION
+                </span>
+
+            </div>
+
+
+            <h1>
+
+                Student
+
+                <span>
+                    Member Portal
+                </span>
+
+            </h1>
+
+
+            <p>
+
+                Access verified Student Union member
+                information through a secure and
+                professional digital directory.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================
+             LOADING
+        ================================== -->
+
+        <section id="loadingSection" class="loading-section hidden">
+
+            <div class="loading-card">
+
+                <div class="loading-spinner"></div>
+
+                <h3>
+                    Loading Student Profile
+                </h3>
+
+                <p>
+                    Please wait while we retrieve the
+                    member information.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             ERROR
+        ================================== -->
+
+        <section id="errorSection" class="error-section hidden">
+
+            <div class="error-card">
+
+                <div class="error-icon">
+                    !
+                </div>
+
+                <h2>
+                    Student Not Found
+                </h2>
+
+                <p id="errorText">
+                    We couldn't find a student with this ID.
+                </p>
+
+                <button onclick="goHome()" class="home-button">
+                    Return Home
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             STUDENT PROFILE
+        ================================== -->
+
+        <section id="studentSection" class="student-section hidden">
+
+            <div class="student-card">
+
+
+                <!-- PROFILE HEADER -->
+
+                <div class="profile-header">
+
+                    <div class="profile-background">
+
+                        <div class="profile-pattern"></div>
+
+                    </div>
+
+
+                    <div class="profile-content">
+
+
+                        <!-- PHOTO -->
+
+                        <div class="photo-wrapper">
+
+                            <img id="studentPhoto" src="" alt="Student Photo" class="student-photo">
+
+                            <div class="verified-badge">
+
+                                ✓
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- NAME -->
+
+                        <div class="profile-name-container">
+
+                            <div class="member-label">
+
+                                VERIFIED STUDENT UNION MEMBER
+
+                            </div>
+
+
+                            <h2 id="studentName">
+
+                                Student Name
+
+                            </h2>
+
+
+                            <div class="position-badge">
+
+                                <span>
+                                    ★
+                                </span>
+
+                                <span id="studentPosition">
+
+                                    Position
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- INFORMATION -->
+
+                <div class="information-container">
+
+                    <div class="section-title">
+
+                        <div class="section-title-icon">
+                            ◈
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Member Information
+                            </h3>
+
+                            <p>
+                                Official Student Union information
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="information-grid">
+
+
+                        <!-- ID -->
+
+                        <div class="information-item">
+
+                            <div class="information-icon">
+                                ID
+                            </div>
+
+                            <div class="information-content">
+
+                                <span>
+                                    STUDENT ID
+                                </span>
+
+                                <strong id="studentID">
+                                    -
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- TEAM -->
+
+                        <div class="information-item">
+
+                            <div class="information-icon">
+                                TE
+                            </div>
+
+                            <div class="information-content">
+
+                                <span>
+                                    TEAM
+                                </span>
+
+                                <strong id="studentTeam">
+                                    -
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- EMAIL -->
+
+                        <div class="information-item">
+
+                            <div class="information-icon">
+                                @
+                            </div>
+
+                            <div class="information-content">
+
+                                <span>
+                                    EMAIL
+                                </span>
+
+                                <strong id="studentEmail" class="break-text">
+                                    -
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- PHONE -->
+
+                        <div class="information-item">
+
+                            <div class="information-icon">
+                                PH
+                            </div>
+
+                            <div class="information-content">
+
+                                <span>
+                                    PHONE
+                                </span>
+
+                                <strong id="studentPhone">
+                                    -
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- BIRTHDAY -->
+
+                        <div class="information-item">
+
+                            <div class="information-icon">
+                                BD
+                            </div>
+
+                            <div class="information-content">
+
+                                <span>
+                                    BIRTHDAY
+                                </span>
+
+                                <strong id="studentBirthday">
+                                    -
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CARD FOOTER -->
+
+                <div class="profile-footer">
+
+                    <div>
+                        ⚓ AAST STUDENT UNION
+                    </div>
+
+                    <div>
+                        VERIFIED MEMBER
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RETURN HOME -->
+
+            <button onclick="goHome()" class="return-button">
+                ← Return to Portal
+            </button>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             HOME / WELCOME
+        ================================== -->
+
+        <section id="homeSection" class="home-section">
+
+            <div class="home-icon">
+                ⚓
+            </div>
+
+
+            <h2>
+                Welcome to AAST Student Union
+            </h2>
+
+
+            <p>
+
+                This portal provides access to
+                verified Student Union member profiles.
+
+            </p>
+
+
+            <div class="url-example">
+
+                <span>
+                    Example:
+                </span>
+
+                <strong>
+                    aastfrontend.com/StudentID
+                </strong>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer>
+
+        <div class="footer-main">
+
+            ⚓ AAST STUDENT UNION
+
+        </div>
+
+        <div class="footer-sub">
+
+            Student Member Portal
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
